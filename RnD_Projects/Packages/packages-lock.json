@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.unity.cinemachine": {
+      "version": "2.6.11",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
     "com.unity.collab-proxy": {
       "version": "1.15.12",
       "depth": 0,
@@ -136,6 +143,13 @@
         "com.unity.modules.ui": "1.0.0",
         "com.unity.modules.imgui": "1.0.0"
       }
+    },
+    "com.xcrew.morpeh": {
+      "version": "https://github.com/scellecs/morpeh.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "38f5ae3a44ff7590002b90abdc49085a8b8ea0a4"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
