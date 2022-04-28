@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6857176381676156286, guid: 3a4ac058a12f9b44dbc2cc3d926d8ba1, type: 3}
       propertyPath: m_Name
-      value: Enemy Variant
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 6857176381676156287, guid: 3a4ac058a12f9b44dbc2cc3d926d8ba1, type: 3}
       propertyPath: m_RootOrder
@@ -54,6 +54,10 @@ PrefabInstance:
     - target: {fileID: 6857176381676156287, guid: 3a4ac058a12f9b44dbc2cc3d926d8ba1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6857176381676156288, guid: 3a4ac058a12f9b44dbc2cc3d926d8ba1, type: 3}
+      propertyPath: serializedData.Team
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6857176382548632806, guid: 3a4ac058a12f9b44dbc2cc3d926d8ba1, type: 3}
       propertyPath: m_Materials.Array.data[0]
