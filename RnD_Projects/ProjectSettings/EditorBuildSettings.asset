@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/MorpehEcs/Environment/Scenes/MorpehEcs.unity
+    path: Assets/_Projects/MorpehEcs/Scenes/MorpehEcs.unity
     guid: 574c8dcbf68d60040b2e6153963f418c
   m_configObjects: {}
