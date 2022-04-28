@@ -41,10 +41,12 @@ namespace MorpehEcs.Environment.Systems
                             Vector3 position = zone.Origin.AddRandomInBox(zone.Size);
                             Instantiate(zone.Prefab, position, Quaternion.identity, zone.SpawnParent);
 
-                            intent.Count--;    
+                            intent.Count--;
                         }
                     }
                 }
+
+                entity.RemoveComponent<IntentToCreateCharacterComponent>();
             }
         }
     }
