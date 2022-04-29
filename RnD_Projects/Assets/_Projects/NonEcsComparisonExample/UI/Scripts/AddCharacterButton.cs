@@ -16,7 +16,7 @@ namespace NonEcsComparisonExample.UI
         [Space] 
         [SerializeField] private Text _label;
 
-        protected override void PerformOnStart() => 
+        private void Awake() => 
             _label.text = $"+{_count}";
 
         protected override void PerformOnClick()

@@ -15,13 +15,13 @@ namespace NonEcsComparisonExample.Character.Components
             GameData.Instance.Characters.Add(_teamComponent);
 
         private void OnDestroy() => 
-            GameData.Instance.Characters.Remove(_teamComponent);
+            GameData.Instance?.Characters.Remove(_teamComponent);
 
         public void TakeDamage(float amount)
         {
             _current = Mathf.Max(0f, _current - amount);
 
-            if (_current.ApproximatelyEqual(0f))
+            if (_current.Approximately(0f))
                 Die();
         }
 
