@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Projects/EcsComparison/BootstrapperScene.unity
+    path: Assets/_Projects/EcsComparison/Bootstrapper/BootstrapperScene.unity
     guid: ef60ad1ae00e82c4caf64153404e2797
   - enabled: 1
     path: Assets/_Projects/EcsComparison/MorpehEcs/Scenes/MorpehEcs.unity
@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Projects/EcsComparison/NonEcsComparisonExample/Scenes/NonEcsComparisonExample.unity
     guid: 010a9e2454c3bd143ab666f2029a728e
+  - enabled: 1
+    path: Assets/_Projects/EcsComparison/DotsExample/Scenes/Dots.unity
+    guid: ea294bdb900a2794db4d29508fa7ac5b
   m_configObjects: {}
