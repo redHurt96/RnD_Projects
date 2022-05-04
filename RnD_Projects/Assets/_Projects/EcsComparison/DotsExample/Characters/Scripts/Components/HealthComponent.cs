@@ -4,7 +4,8 @@ using Unity.Entities;
 namespace EcsComparison.DotsExample.Characters.Components
 {
     [Serializable, GenerateAuthoringComponent]
-    public struct NavigationComponent : IComponentData
+    public struct HealthComponent : IComponentData
     {
+        public float Current;
     }
 }

@@ -21,9 +21,9 @@ namespace MorpehEcs.Characters.Systems
         {
             foreach (Entity entity in _filter)
             {
-                ref HealthComponent health = ref entity.GetComponent<HealthComponent>();
+                ref HealthComponent healthAuthoring = ref entity.GetComponent<HealthComponent>();
 
-                if (health.Current <= 0) 
+                if (healthAuthoring.Current <= 0) 
                     Destroy(entity);
             }
         }

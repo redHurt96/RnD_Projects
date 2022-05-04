@@ -1,6 +1,6 @@
 using Morpeh;
-using MorpehEcs.Characters.Components;
 using Unity.IL2CPP.CompilerServices;
+using HealthComponent = MorpehEcs.Characters.Components.HealthComponent;
 
 namespace MorpehEcs.Characters.ComponentsProviders
 {

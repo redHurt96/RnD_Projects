@@ -1,11 +1,9 @@
 using System;
-using System.Linq;
 using Morpeh;
 using MorpehEcs.Characters.Components;
 using MorpehEcs.Infrastructure.Components;
 using Unity.IL2CPP.CompilerServices;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace MorpehEcs.Characters.Systems
 {

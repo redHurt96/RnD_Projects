@@ -2,6 +2,7 @@ using Morpeh;
 using MorpehEcs.Characters.Components;
 using Unity.IL2CPP.CompilerServices;
 using UnityEngine;
+using HealthComponent = MorpehEcs.Characters.Components.HealthComponent;
 
 namespace MorpehEcs.Characters.Systems
 {
@@ -24,11 +25,11 @@ namespace MorpehEcs.Characters.Systems
         {
             foreach (Entity entity in _filter)
             {
-                ref HealthComponent targetHealth = ref entity.GetComponent<EnemyTargetComponent>()
+                ref HealthComponent targetHealthAuthoring = ref entity.GetComponent<EnemyTargetComponent>()
                     .Target.GetComponent<HealthComponent>();
                 ref AttackSettingsComponent attackSettings = ref entity.GetComponent<AttackSettingsComponent>();
 
-                targetHealth.Current = Mathf.Max(0f, targetHealth.Current - attackSettings.Damage);
+                targetHealthAuthoring.Current = Mathf.Max(0f, targetHealthAuthoring.Current - attackSettings.Damage);
                 entity.AddComponent<AttackCooldownComponent>().Time = attackSettings.Cooldown;
             }
         }
