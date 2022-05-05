@@ -1,11 +1,11 @@
 {
   "dependencies": {
     "com.leopotam.ecslite": {
-      "version": "https://github.com/Leopotam/ecslite.git",
+      "version": "https://github.com/voody2506/ecslite.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "44d3e1ce88b40190fa497e1f0931569af969a6ba"
+      "hash": "438b839bc1d7fff5ccb2ba99b548f4ef9711f299"
     },
     "com.leopotam.ecslite.unityeditor": {
       "version": "https://github.com/Leopotam/ecslite-unityeditor.git",
@@ -163,6 +163,13 @@
         "com.unity.modules.ui": "1.0.0",
         "com.unity.modules.imgui": "1.0.0"
       }
+    },
+    "com.voody.unileo.lite": {
+      "version": "https://github.com/voody2506/UniLeo-Lite.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "3726d31b5acbdf683edb372ea1efb74a12321c17"
     },
     "com.xcrew.morpeh": {
       "version": "https://github.com/scellecs/morpeh.git",
