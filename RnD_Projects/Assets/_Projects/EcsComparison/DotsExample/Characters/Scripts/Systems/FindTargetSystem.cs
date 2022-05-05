@@ -1,8 +1,8 @@
-﻿using System;
-using EcsComparison.DotsExample.Characters.Components;
+﻿using EcsComparison.DotsExample.Characters.Components;
+using RH.Utilities.Extensions;
 using Unity.Entities;
+using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.AI;
 
 namespace EcsComparison.DotsExample.Characters.Systems
 {
@@ -11,26 +11,35 @@ namespace EcsComparison.DotsExample.Characters.Systems
         protected override void OnUpdate()
         {
             Entities
-                .ForEach((Entity entity, ref EnemyTargetComponent targetComponent, ref TeamMemberComponent teamMemberComponent) =>
+                .WithAll<EnemyTargetComponent>()
+                .ForEach((Entity entity, ref EnemyTargetComponent targetComponent, in TeamMemberComponent teamMemberComponent) =>
                 {
                     if (targetComponent.Target == null)
-                        FindTarget(ref entity, ref targetComponent, ref teamMemberComponent);
+                        FindTarget(ref entity, ref targetComponent, in teamMemberComponent);
                 })
+                .WithoutBurst()
                 .Run();
         }
 
-        private void FindTarget(ref Entity entity, ref EnemyTargetComponent targetComponent, ref TeamMemberComponent teamMemberComponent)
+        private void FindTarget(ref Entity entity, ref EnemyTargetComponent targetComponent, in TeamMemberComponent teamMemberComponent)
         {
+            float3 currentPosition = EntityManager.GetComponentObject<Transform>(entity).position;
             var currentTeam = teamMemberComponent.Team;
-            (Entity, float) closestEnemy = (default, float.MaxValue);
-            Vector3 sqrDistance = default;
-            
+            (Entity entity, float distance) closestEnemy = (default, distance: float.MaxValue);
+            float sqrDistance = default;
+            float3 otherPosition = default;
+
             Entities.ForEach((Entity otherEntity, ref TeamMemberComponent otherTeam) =>
             {
-                sqrDistance = 
-                if (otherTeam.Team != currentTeam)
+                otherPosition = EntityManager.GetComponentObject<Transform>(otherEntity).position;
+                sqrDistance = math.distancesq(currentPosition, otherPosition);
 
-            });
+                if (currentTeam != otherTeam.Team && sqrDistance < closestEnemy.distance)
+                    closestEnemy = (otherEntity, sqrDistance);
+            }).WithoutBurst().Run();
+
+            if (!closestEnemy.distance.Approximately(float.MaxValue))
+                targetComponent.Target = closestEnemy.entity;
         }
     }
 }
