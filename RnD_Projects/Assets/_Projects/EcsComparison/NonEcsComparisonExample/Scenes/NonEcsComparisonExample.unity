@@ -4015,6 +4015,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 449887898}
     m_Modifications:
+    - target: {fileID: 5591542503789785813, guid: f1c87839c684c9845932149321aedf3a, type: 3}
+      propertyPath: m_Text
+      value: Without ECS
+      objectReference: {fileID: 0}
     - target: {fileID: 5591542504391296489, guid: f1c87839c684c9845932149321aedf3a, type: 3}
       propertyPath: m_Pivot.x
       value: 0

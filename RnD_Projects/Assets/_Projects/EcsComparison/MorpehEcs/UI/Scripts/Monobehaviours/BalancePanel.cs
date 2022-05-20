@@ -1,10 +1,7 @@
-using Morpeh;
-using MorpehEcs.UI.Components;
-using MorpehEcs.UI.ComponentsProviders;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace MorpehEcs.UI.Monobehaviours
+namespace EcsComparison.MorpehEcs.UI.Scripts.Monobehaviours
 {
     public class BalancePanel : MonoBehaviour
     {
@@ -12,20 +9,22 @@ namespace MorpehEcs.UI.Monobehaviours
         [SerializeField] private Text _friendsCount;
         [SerializeField] private Text _enemiesCount;
 
-        [Space]
-        [SerializeField] private CharactersCountProvider _charactersCountProvider;
+        [Space] 
+        [SerializeField] private Transform _friendsParent;
+        [SerializeField] private Transform _enemiesParent;
+
+        private int _friendsCountValue => _friendsParent.childCount;
+        private int _enemiesCountValue => _enemiesParent.childCount;
+        private int _totalCountValue => _friendsCountValue + _enemiesCountValue;
 
         private void Update()
         {
-            ref var component = ref _charactersCountProvider.Entity.GetComponent<CharactersCountsComponent>();
-            int totalCharactersCount = component.Enemies + component.Friends;
-
-            if (totalCharactersCount == 0)
+            if (_totalCountValue == 0)
                 return;
 
-            _slider.value = component.Friends / (float)totalCharactersCount;
-            _friendsCount.text = component.Friends.ToString();
-            _enemiesCount.text = component.Enemies.ToString();
+            _slider.value = _friendsCountValue / (float)_totalCountValue;
+            _friendsCount.text = _friendsCountValue.ToString();
+            _enemiesCount.text = _enemiesCountValue.ToString();
         }
     }
 }

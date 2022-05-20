@@ -51,7 +51,7 @@ namespace MorpehEcs.Characters.Systems
         private void AssignTarget(Entity to)
         {
             ref var teamComponent = ref to.GetComponent<TeamMemberComponent>();
-            var closestTarget = FindClosestTarget(to, teamComponent);
+            Tuple<Entity, float> closestTarget = FindClosestTarget(to, teamComponent);
 
             AddComponentIfHasTarget(to, closestTarget);
         }

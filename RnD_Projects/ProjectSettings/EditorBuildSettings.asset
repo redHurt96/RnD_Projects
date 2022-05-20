@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Projects/EcsComparison/NonEcsComparisonExample/Scenes/NonEcsComparisonExample.unity
     guid: 010a9e2454c3bd143ab666f2029a728e
+  - enabled: 1
+    path: Assets/_Projects/EcsComparison/LeoEcs/Scenes/LeoEcs.unity
+    guid: af638cffced2e7d41a00c823c12e2184
   m_configObjects: {}

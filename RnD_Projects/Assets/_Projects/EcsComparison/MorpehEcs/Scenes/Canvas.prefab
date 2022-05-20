@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9d703630384424f92529ca1978e8ad5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Scene: 1
+  Scene: 0
 --- !u!1 &5591542503789785815
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,7 +292,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Non ECS
+  m_Text: LeoECS
 --- !u!1 &5591542504391296490
 GameObject:
   m_ObjectHideFlags: 0
